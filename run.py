@@ -13,7 +13,14 @@ class Board: # the main class is from CI Battleship project
         self.type = type
         self.guesses = []
         self.ships = []
+
+    def print_board(self):
+        for i in range(len(self.board)):
+            self.board[i] = " ".join(self.board[i])
         
+        self.board = "\n".join(self.board)
+        print(self.board)
+
 
 def welcome_message(board_size, number_of_ships):
     """
@@ -106,4 +113,7 @@ def main():
     # board(board_size)
 
 
-main()
+# main()
+
+a = Board(5, 4, "matt", 'computer')
+a.print_board()
