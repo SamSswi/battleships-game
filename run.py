@@ -15,11 +15,25 @@ class Board: # the main class is from CI Battleship project
         self.ships = []
 
     def print_board(self):
+        """
+        Displays the board
+        """
         for i in range(len(self.board)):
             self.board[i] = " ".join(self.board[i])
         
         self.board = "\n".join(self.board)
         print(self.board)
+    
+    def adding_ships(self, a, b, type):
+        """
+        Adds ships to the board for the player. 
+        Adds ship coordinates to the self.ships list for the computer. 
+        """
+        if self.type == 'computer':
+            self.ships.append((a,b))
+        elif self.type == 'player':
+            self.board[a][b] = '@'
+
 
 
 def welcome_message(board_size, number_of_ships):
@@ -116,4 +130,19 @@ def main():
 # main()
 
 a = Board(5, 4, "matt", 'computer')
-a.print_board()
+x = Board(5, 4, "greg", 'player')
+x.adding_ships(1, 2, 'player')
+x.print_board()
+x.adding_ships(0, 1, 'player')
+x.print_board()
+# x.adding_ships(2, 3, 'player')
+# x.print_board()
+# x.adding_ships(3, 4, 'player')
+# x.print_board()
+# x.adding_ships(2, 2, 'player')
+# x.print_board()
+
+# x.adding_ships(0, 0, 'player')
+
+
+# x.print_board()
