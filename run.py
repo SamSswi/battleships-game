@@ -5,7 +5,7 @@ def welcome_message(board_size, number_of_ships):
     Displays the coordinates for the top left corner.
     """
 
-    #the welcome text is inspire from Ultimate battleships project ci
+    # the welcome text is inspire from Ultimate battleships project ci
     message = f'''
     ---------------------------------------------
            Welcome to the BATTLESHIPS GAME!
@@ -24,11 +24,31 @@ def name_input():
     Validates player name.
     Returns the name.
     """
+    while True:  # love-sandwiches CI  the idea to use a while True loop
+        input_text = "Type in your battle name (max 30 characters):"
+        name = input(input_text + "\n")
+        print('-' * len(input_text))
+        if validate_name(name):
+            return name
 
-    input_text = "Type in your battle name (max 30 characters):"
-    name = input(input_text + "\n")
-    print('-' * len(input_text))
-    return name
+
+def validate_name(name):
+    """
+    Raises ValueError is the name is too long or an empty string
+    """
+
+    name_length = len(name)
+    if name_length > 30:
+        print(f"Your name has {name_length} characters and it exceeds"
+              " the limit of 30 characters: \nTry entering a shorter "
+              "battle name!")
+        return False
+    elif name == '':
+        print("You submitted an empty string. Think of a cool battle"
+              " name and try again!")
+        return False
+    else:
+        return True
 
 
 def main():
