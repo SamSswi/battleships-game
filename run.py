@@ -1,3 +1,20 @@
+class Board: # the main class is from CI Battleship project
+    """
+    Main board class. Sets board size, the number of ships, 
+    the player's name and the board type (player or computer board)
+    Has methods for adding ships and guesses and printing the board.
+    """
+
+    def __init__(self, size, num_ships, name, type):
+        self.size = size
+        self.board = [['.' for i in range(size)] for j in range(size)]
+        self.num_ships = num_ships
+        self.name = name
+        self.type = type
+        self.guesses = []
+        self.ships = []
+        
+
 def welcome_message(board_size, number_of_ships):
     """
     Displays the welcome message.
@@ -86,7 +103,7 @@ def main():
     # welcome_message(board_size, number_of_ships)
     # name = name_input()
     # print(name)
-    board(board_size)
+    # board(board_size)
 
 
 main()
