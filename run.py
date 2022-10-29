@@ -5,6 +5,7 @@ def welcome_message(board_size, number_of_ships):
     Displays the coordinates for the top left corner.
     """
 
+    #the welcome text is inspire from Ultimate battleships project ci
     message = f'''
     ---------------------------------------------
            Welcome to the BATTLESHIPS GAME!
