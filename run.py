@@ -58,12 +58,20 @@ def board(size):
 
     row = []
 
-    for i in range(size):
+    # underscore as a throwaway variable - CI Battleships game
+    for _ in range(size):
         col = []
-        for j in range(size):
+        for _ in range(size):
             col.append(".")
         row.append(col)
 
+    print(row)
+    guess = input("coordinates: ")
+    print(row)
+    print(guess)
+    modify_board = guess.split(',')
+    print(modify_board)  # python3 run.py
+    row[int(modify_board[0])][int(modify_board[1])] = 'a'
     print(row)
 
 
@@ -72,7 +80,7 @@ def main():
     Main function
     """
     board_size = 5
-    number_of_ships = 4
+    # number_of_ships = 4
     # welcome_message(board_size, number_of_ships)
     # name = name_input()
     # print(name)
