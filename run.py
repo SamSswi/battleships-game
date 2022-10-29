@@ -4,7 +4,6 @@ def welcome_message(board_size, number_of_ships):
     Specifies the board size and the number of ships.
     Displays the coordinates for the top left corner.
     """
-    # new_line = '\n'
     message = f'''
     ---------------------------------------------
            Welcome to the BATTLESHIPS GAME!
