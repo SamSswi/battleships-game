@@ -19,10 +19,8 @@ class Board: # the main class is from CI Battleship project
         Displays the board
         """
         for i in range(len(self.board)):
-            self.board[i] = " ".join(self.board[i])
-        
-        self.board = "\n".join(self.board)
-        print(self.board)
+            print(" ".join(self.board[i])) # idea to loop a print statement 
+                                           # from CI battleship
     
     def adding_ships(self, a, b, type):
         """
@@ -30,7 +28,7 @@ class Board: # the main class is from CI Battleship project
         Adds ship coordinates to the self.ships list for the computer. 
         """
         if self.type == 'computer':
-            self.ships.append((a,b))
+            self.ships.append((a, b))
         elif self.type == 'player':
             self.board[a][b] = '@'
 
@@ -135,14 +133,14 @@ x.adding_ships(1, 2, 'player')
 x.print_board()
 x.adding_ships(0, 1, 'player')
 x.print_board()
-# x.adding_ships(2, 3, 'player')
-# x.print_board()
-# x.adding_ships(3, 4, 'player')
-# x.print_board()
-# x.adding_ships(2, 2, 'player')
-# x.print_board()
+x.adding_ships(2, 3, 'player')
+x.print_board()
+x.adding_ships(3, 4, 'player')
+x.print_board()
+x.adding_ships(2, 2, 'player')
+x.print_board()
 
-# x.adding_ships(0, 0, 'player')
+x.adding_ships(0, 0, 'player')
 
 
-# x.print_board()
+x.print_board()
