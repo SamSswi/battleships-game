@@ -65,14 +65,16 @@ def board(size):
             col.append(".")
         row.append(col)
 
-    print(row)
     guess = input("coordinates: ")
-    print(row)
     print(guess)
     modify_board = guess.split(',')
     print(modify_board)  # python3 run.py
     row[int(modify_board[0])][int(modify_board[1])] = 'a'
-    print(row)
+    display_row = row
+    for i in range(len(display_row)):
+        display_row[i] = " ".join(display_row[i])
+    display_row = "\n".join(display_row)
+    print(display_row)
 
 
 def main():
