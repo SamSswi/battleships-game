@@ -4,6 +4,7 @@ def welcome_message(board_size, number_of_ships):
     Specifies the board size and the number of ships.
     Displays the coordinates for the top left corner.
     """
+
     message = f'''
     ---------------------------------------------
            Welcome to the BATTLESHIPS GAME!
@@ -16,7 +17,17 @@ def welcome_message(board_size, number_of_ships):
     return message
 
 
+def name_input():
+    """
+    Gets player name with user input.
+    Validates player name.
+    Returns the name.
+    """
 
+    input_text = "Type in your battle name (max 30 characters):"
+    name = input(input_text + "\n")
+    print('-' * len(input_text))
+    return name
 
 
 def main():
@@ -26,6 +37,8 @@ def main():
     board_size = 5
     number_of_ships = 4
     welcome_message(board_size, number_of_ships)
+    name = name_input()
+    print(name)
 
 
 main()
