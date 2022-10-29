@@ -51,15 +51,32 @@ def validate_name(name):
         return True
 
 
+def board(size):
+    """
+    Displays a basic board
+    """
+
+    row = []
+
+    for i in range(size):
+        col = []
+        for j in range(size):
+            col.append(".")
+        row.append(col)
+
+    print(row)
+
+
 def main():
     """
     Main function
     """
     board_size = 5
     number_of_ships = 4
-    welcome_message(board_size, number_of_ships)
-    name = name_input()
-    print(name)
+    # welcome_message(board_size, number_of_ships)
+    # name = name_input()
+    # print(name)
+    board(board_size)
 
 
 main()
