@@ -20,7 +20,7 @@ class Board:  # the main class is from CI Battleship project
         """
         for i in range(len(self.board)):    # idea to loop a print statement
             print(" ".join(self.board[i]))  # from CI battleship
-    
+
     def adding_ships(self, a, b, type):
         """
         Adds ships to the board for the player. 
@@ -56,7 +56,7 @@ def welcome_message(board_size, number_of_ships):
        Board Size: {board_size}; Number of Battleships: {number_of_ships}
     Top left corner coordinates - row: 1, col: 1
     ---------------------------------------------
-    
+
     '''
     print(message)
     return message
