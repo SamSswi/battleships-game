@@ -95,6 +95,21 @@ def validate_name(name):
         return True
 
 
+def name():
+    """
+    Prompt the player to type in the name and return the name when 
+    it is valid.
+    """
+    player_name = name_input()
+    valid_name = validate_name(player_name)
+    
+    while valid_name is False:
+        player_name = name_input()
+        valid_name = validate_name(name)
+
+    return player_name
+
+
 def main():
     """
     Main function
@@ -109,23 +124,26 @@ def main():
 
 # main()
 
-a = Board(5, 4, "matt", 'computer')
-x = Board(5, 4, "greg", 'player')
-x.adding_ships(1, 2, 'player')
-x.print_board()
-x.adding_ships(0, 1, 'player')
-x.print_board()
-x.adding_ships(2, 3, 'player')
-x.print_board()
-x.adding_ships(3, 4, 'player')
-x.print_board()
-x.adding_ships(2, 2, 'player')
-x.print_board()
+# a = Board(5, 4, "matt", 'computer')
+# x = Board(5, 4, "greg", 'player')
+# x.adding_ships(1, 2, 'player')
+# x.print_board()
+# x.adding_ships(0, 1, 'player')
+# x.print_board()
+# x.adding_ships(2, 3, 'player')
+# x.print_board()
+# x.adding_ships(3, 4, 'player')
+# x.print_board()
+# x.adding_ships(2, 2, 'player')
+# x.print_board()
 
-x.adding_ships(0, 0, 'player')
+# x.adding_ships(0, 0, 'player')
 
 
-x.print_board()
+# x.print_board()
 
-x.guess(1, 1)
-x.print_board()
+# x.guess(1, 1)
+# x.print_board()
+
+a = name()
+print(a)
