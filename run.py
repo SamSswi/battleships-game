@@ -1,4 +1,4 @@
-class Board: # the main class is from CI Battleship project
+class Board:  # the main class is from CI Battleship project
     """
     Main board class. Sets board size, the number of ships, 
     the player's name and the board type (player or computer board)
@@ -18,9 +18,8 @@ class Board: # the main class is from CI Battleship project
         """
         Displays the board
         """
-        for i in range(len(self.board)):
-            print(" ".join(self.board[i])) # idea to loop a print statement 
-                                           # from CI battleship
+        for i in range(len(self.board)):    # idea to loop a print statement
+            print(" ".join(self.board[i]))  # from CI battleship
     
     def adding_ships(self, a, b, type):
         """
@@ -31,7 +30,16 @@ class Board: # the main class is from CI Battleship project
             self.ships.append((a, b))
         elif self.type == 'player':
             self.board[a][b] = '@'
+            self.ships.append((a, b))
 
+    def guess(self, x, y):
+        """
+        Checks whether the guess is a hit or miss.
+        """
+        if (x,y) in self.ships:
+            self.board[x][y] = '*'
+        else:
+            self.board[x][y] = 'X'
 
 
 def welcome_message(board_size, number_of_ships):
@@ -117,7 +125,7 @@ def main():
     """
     Main function
     """
-    board_size = 5
+    # board_size = 5
     # number_of_ships = 4
     # welcome_message(board_size, number_of_ships)
     # name = name_input()
@@ -143,4 +151,7 @@ x.print_board()
 x.adding_ships(0, 0, 'player')
 
 
+x.print_board()
+
+x.guess(1, 1)
 x.print_board()
