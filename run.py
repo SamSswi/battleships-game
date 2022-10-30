@@ -43,6 +43,7 @@ class Board:  # the main class is from CI Battleship project
             self.board[x][y] = '*'
         else:
             self.board[x][y] = 'X'
+        self.guesses.append((x, y))
     
     def generate_ships(self, num_ships, type):
         """
@@ -151,16 +152,10 @@ a.print_board()
 x.guess(1, 1)
 x.guess(randint(0, 4), randint(0, 4))
 x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
+
+a.guess(randint(0, 4), randint(0, 4))
+
+a.print_board()
 x.print_board()
 
 
