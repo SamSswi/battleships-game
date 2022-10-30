@@ -43,6 +43,19 @@ class Board:  # the main class is from CI Battleship project
             self.board[x][y] = '*'
         else:
             self.board[x][y] = 'X'
+    
+    def generate_ships(self, num_ships, type):
+        """
+        Generates ships for either player or computer board.
+        """
+
+        for _ in range(num_ships):
+            row = randint(0, 4)
+            col = randint(0, 4)
+            while (row, col) in self.ships:
+                row = randint(0, 4)
+                col = randint(0, 4)
+            self.adding_ships(row, col, type)
 
 
 def welcome_message(board_size, number_of_ships):
@@ -127,26 +140,31 @@ def main():
 
 # main()
 
-# a = Board(5, 4, "matt", 'computer')
-# x = Board(5, 4, "greg", 'player')
-# x.adding_ships(1, 2, 'player')
-# x.print_board()
-# x.adding_ships(0, 1, 'player')
-# x.print_board()
-# x.adding_ships(2, 3, 'player')
-# x.print_board()
-# x.adding_ships(3, 4, 'player')
-# x.print_board()
-# x.adding_ships(2, 2, 'player')
-# x.print_board()
-
-# x.adding_ships(0, 0, 'player')
+a = Board(5, 4, "matt", 'computer')
+x = Board(5, 4, "greg", 'player')
+x.generate_ships(4, 'player')
+a.generate_ships(4, 'computer')
+x.print_board()
+a.print_board()
 
 
-# x.print_board()
+x.guess(1, 1)
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.guess(randint(0, 4), randint(0, 4))
+x.print_board()
 
-# x.guess(1, 1)
-# x.print_board()
 
-a = name()
-print(a)
+# a = name()
+# print(a)
+
+# print(randint(0, 5))
