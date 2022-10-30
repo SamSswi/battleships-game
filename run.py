@@ -36,7 +36,7 @@ class Board:  # the main class is from CI Battleship project
         """
         Checks whether the guess is a hit or miss.
         """
-        if (x,y) in self.ships:
+        if (x, y) in self.ships:
             self.board[x][y] = '*'
         else:
             self.board[x][y] = 'X'
@@ -93,32 +93,6 @@ def validate_name(name):
         return False
     else:
         return True
-
-
-def board(size):
-    """
-    Displays a basic board
-    """
-
-    row = []
-
-    # underscore as a throwaway variable - CI Battleships game
-    for _ in range(size):
-        col = []
-        for _ in range(size):
-            col.append(".")
-        row.append(col)
-
-    guess = input("coordinates: ")
-    print(guess)
-    modify_board = guess.split(',')
-    print(modify_board)  # python3 run.py
-    row[int(modify_board[0])][int(modify_board[1])] = 'a'
-    display_row = row
-    for i in range(len(display_row)):
-        display_row[i] = " ".join(display_row[i])
-    display_row = "\n".join(display_row)
-    print(display_row)
 
 
 def main():
