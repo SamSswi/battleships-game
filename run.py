@@ -1,3 +1,6 @@
+from random import randint
+
+
 class Board:  # the main class is from CI Battleship project
     """
     Main board class. Sets board size, the number of ships, 
@@ -102,7 +105,7 @@ def name():
     """
     player_name = name_input()
     valid_name = validate_name(player_name)
-    
+
     while valid_name is False:
         player_name = name_input()
         valid_name = validate_name(name)
