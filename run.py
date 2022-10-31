@@ -17,10 +17,12 @@ class Board:  # the main class is from CI Battleship project
         self.guesses = []
         self.ships = []
 
-    def print_board(self):
+    def print_board(self, name):
         """
-        Displays the board
+        Displays the board, with the name on top.
         """
+
+        print(f"{name}'s board:")
         for i in range(len(self.board)):    # idea to loop a print statement
             print(" ".join(self.board[i]))  # from CI battleship
 
@@ -131,35 +133,43 @@ def main():
     """
     Main function
     """
-    # board_size = 5
-    # number_of_ships = 4
-    # welcome_message(board_size, number_of_ships)
-    # name = name_input()
+    board_size = 3
+    number_of_ships = 1
+    welcome_message(board_size, number_of_ships)
+    name = name_input()
+    player = Board(board_size, number_of_ships, name, 'player')
+    computer = Board(board_size, number_of_ships, "Computer", "computer")
+    player.print_board(name)
+    computer.print_board('computer')
     # print(name)
     # board(board_size)
 
 
-# main()
+main()
 
-a = Board(5, 4, "matt", 'computer')
-x = Board(5, 4, "greg", 'player')
-x.generate_ships(4, 'player')
-a.generate_ships(4, 'computer')
-x.print_board()
-a.print_board()
-
-
-x.guess(1, 1)
-x.guess(randint(0, 4), randint(0, 4))
-x.guess(randint(0, 4), randint(0, 4))
-
-a.guess(randint(0, 4), randint(0, 4))
-
-a.print_board()
-x.print_board()
+# a = Board(5, 4, "matt", 'computer')
+# x = Board(5, 4, "greg", 'player')
+# x.generate_ships(4, 'player')
+# a.generate_ships(4, 'computer')
+# x.print_board()
+# a.print_board()
 
 
-# a = name()
-# print(a)
+# x.guess(1, 1)
+# x.guess(randint(0, 4), randint(0, 4))
+# x.guess(randint(0, 4), randint(0, 4))
 
-# print(randint(0, 5))
+# a.guess(randint(0, 4), randint(0, 4))
+
+# a.print_board()
+# x.print_board()
+
+
+# # a = name()
+# # print(a)
+
+# # print(randint(0, 5))
+
+# y = x.ships
+
+# print(x.ships)
