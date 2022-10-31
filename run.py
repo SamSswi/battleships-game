@@ -129,6 +129,20 @@ def name():
     return player_name
 
 
+def guess_input():
+    """
+    Prompts the player to guess computer's ships positions.
+    Collects the imputed data.
+    """
+    print("Time to attack! The enemy is hiding his ships!")
+    row = input("Select a row where to strike: ")
+    col = input("Let's add precision to that. Select a column: ")
+
+    player_guess = (row, col)
+
+    return player_guess
+
+
 def main():
     """
     Main function
@@ -143,6 +157,7 @@ def main():
     computer.print_board('computer')
     # print(name)
     # board(board_size)
+    guess_input()
 
 
 main()
