@@ -143,7 +143,7 @@ def guess_input():
     return player_guess
 
 
-def validate_guess(guess, board_size):
+def validate_guess(object, guess, board_size):
     """
     Check whether a player guess is valid.
     """
@@ -156,6 +156,9 @@ def validate_guess(guess, board_size):
         low_limit = 0
         lower_err = v_row < low_limit or v_col < low_limit
         upper_err = v_row > upp_limit or v_col > upp_limit
+
+        if guess in object.guesses:
+            return False
 
         if lower_err or upper_err:
             print(f"The values must be between {low_limit} and {upp_limit}")
@@ -171,8 +174,8 @@ def main():
     """
     Main function
     """
-    # board_size = 3
-    # number_of_ships = 1
+    board_size = 3
+    number_of_ships = 1
     # welcome_message(board_size, number_of_ships)
     # name = name_input()
     # player = Board(board_size, number_of_ships, name, 'player')
@@ -181,11 +184,12 @@ def main():
     # computer.print_board('computer')
     # # print(name)
     # # board(board_size)
+    player = Board(board_size, number_of_ships, 'player', 'player')
     coordinates = guess_input()
-    a = validate_guess(coordinates, 5)
+    a = validate_guess(player, coordinates, 5)
     while not a:
         coordinates = guess_input()
-        a = validate_guess(coordinates, 5)
+        a = validate_guess(player, coordinates, 5)
 
 
 main()
