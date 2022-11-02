@@ -184,7 +184,8 @@ def final_guess_player(player, computer, board_size):
         a = validate_guess(player, coordinates, board_size)
     
     row, col = coordinates
-    player.guess(int(row), int(col))
+    result = player.guess(int(row), int(col))
+    return result
 
 
 def computer_guess(computer, player, board_size):
@@ -211,8 +212,11 @@ def main():
     computer = Board(board_size, number_of_ships, "Computer", "computer")
     player.print_board(name)
     computer.print_board('computer')
-    final_guess_player(player, computer, board_size)
-    computer_guess(computer, player, board_size)
+    player_score = 0
+    computer_score = 0
+    while player_score < number_of_ships and computer_score < number_of_ships:
+        final_guess_player(player, computer, board_size)
+        computer_guess(computer, player, board_size)
     print(player.guesses)
     print(computer.guesses)
     player.print_board(name)
