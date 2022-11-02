@@ -170,26 +170,48 @@ def validate_guess(object, guess, board_size):
     return True
 
 
+def final_guess_player(player, computer, board_size):
+    """
+    Sums up all the guessing process for the player
+    """
+    coordinates = guess_input()
+    a = validate_guess(player, coordinates, board_size)
+    while not a:
+        coordinates = guess_input()
+        a = validate_guess(player, coordinates, board_size)
+    
+    row, col = coordinates
+    player.guess(int(row), int(col))
+
+
+def computer_guess(computer, player, board_size):
+    """
+    Sums up all the guessing process for computer
+    """
+    guess = (randint(0, board_size - 1), randint(0, board_size - 1))
+    while guess in computer.guesses:
+        guess = (randint(0, board_size), randint(0, board_size))
+
+    row, col = guess
+    computer.guess(int(row), int(col))
+
+
 def main():
     """
     Main function
     """
     board_size = 3
     number_of_ships = 1
-    # welcome_message(board_size, number_of_ships)
-    # name = name_input()
-    # player = Board(board_size, number_of_ships, name, 'player')
-    # computer = Board(board_size, number_of_ships, "Computer", "computer")
-    # player.print_board(name)
-    # computer.print_board('computer')
-    # # print(name)
-    # # board(board_size)
-    player = Board(board_size, number_of_ships, 'player', 'player')
-    coordinates = guess_input()
-    a = validate_guess(player, coordinates, 5)
-    while not a:
-        coordinates = guess_input()
-        a = validate_guess(player, coordinates, 5)
+    welcome_message(board_size, number_of_ships)
+    name = name_input()
+    player = Board(board_size, number_of_ships, name, 'player')
+    computer = Board(board_size, number_of_ships, "Computer", "computer")
+    player.print_board(name)
+    computer.print_board('computer')
+    final_guess_player(player, computer, board_size)
+    computer_guess(computer, player, board_size)
+    print(player.guesses)
+    print(computer.guesses)
 
 
 main()
