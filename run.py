@@ -43,9 +43,12 @@ class Board:  # the main class is from CI Battleship project
         """
         if (x, y) in self.ships:
             self.board[x][y] = '*'
+            result = "Hit"
         else:
             self.board[x][y] = 'X'
+            result = "Miss"
         self.guesses.append((x, y))
+        return result
     
     def generate_ships(self, num_ships, type):
         """
@@ -212,6 +215,8 @@ def main():
     computer_guess(computer, player, board_size)
     print(player.guesses)
     print(computer.guesses)
+    player.print_board(name)
+    computer.print_board('computer')
 
 
 main()
