@@ -197,7 +197,8 @@ def computer_guess(computer, player, board_size):
         guess = (randint(0, board_size), randint(0, board_size))
 
     row, col = guess
-    computer.guess(int(row), int(col))
+    result = computer.guess(int(row), int(col))
+    return result
 
 
 def main():
