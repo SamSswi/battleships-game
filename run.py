@@ -56,11 +56,11 @@ class Board:  # the main class is from CI Battleship project
         """
 
         for _ in range(num_ships):
-            row = randint(0, 4)
-            col = randint(0, 4)
+            row = randint(0, 2)
+            col = randint(0, 2)
             while (row, col) in self.ships:
-                row = randint(0, 4)
-                col = randint(0, 4)
+                row = randint(0, 2)
+                col = randint(0, 2)
             self.adding_ships(row, col, type)
 
 
@@ -194,7 +194,7 @@ def computer_guess(computer, player, board_size):
     """
     guess = (randint(0, board_size - 1), randint(0, board_size - 1))
     while guess in computer.guesses:
-        guess = (randint(0, board_size), randint(0, board_size))
+        guess = (randint(0, board_size -1), randint(0, board_size - 1))
 
     row, col = guess
     result = computer.guess(int(row), int(col))
@@ -206,22 +206,30 @@ def main():
     Main function
     """
     board_size = 3
-    number_of_ships = 1
+    number_of_ships = 4
     welcome_message(board_size, number_of_ships)
     name = name_input()
     player = Board(board_size, number_of_ships, name, 'player')
     computer = Board(board_size, number_of_ships, "Computer", "computer")
     player.print_board(name)
     computer.print_board('computer')
+    player.generate_ships(number_of_ships, 'player')
+    computer.generate_ships(number_of_ships, 'computer')
     player_score = 0
     computer_score = 0
     while player_score < number_of_ships and computer_score < number_of_ships:
-        final_guess_player(player, computer, board_size)
-        computer_guess(computer, player, board_size)
-    print(player.guesses)
-    print(computer.guesses)
-    player.print_board(name)
-    computer.print_board('computer')
+        plyr_guess = final_guess_player(player, computer, board_size)
+        cpu_guess = computer_guess(computer, player, board_size)
+        if plyr_guess == "Hit":
+            player_score += 1
+        if cpu_guess == "Hit":
+            computer_score += 1
+        print(f"{name}  {player_score} : {computer_score}  computer")
+
+        print(player.guesses)
+        print(computer.guesses)
+        player.print_board(name)
+        computer.print_board('computer')
 
 
 main()
