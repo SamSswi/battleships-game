@@ -184,7 +184,7 @@ def final_guess_player(player, computer, board_size):
         a = validate_guess(player, coordinates, board_size)
     
     row, col = coordinates
-    result = player.guess(int(row), int(col))
+    result = computer.guess(int(row), int(col))
     return result
 
 
@@ -193,11 +193,11 @@ def computer_guess(computer, player, board_size):
     Sums up all the guessing process for computer
     """
     guess = (randint(0, board_size - 1), randint(0, board_size - 1))
-    while guess in computer.guesses:
+    while guess in player.guesses:
         guess = (randint(0, board_size -1), randint(0, board_size - 1))
 
     row, col = guess
-    result = computer.guess(int(row), int(col))
+    result = player.guess(int(row), int(col))
     return result
 
 
@@ -224,12 +224,11 @@ def main():
             player_score += 1
         if cpu_guess == "Hit":
             computer_score += 1
-        print(f"{name}  {player_score} : {computer_score}  computer")
-
-        print(player.guesses)
-        print(computer.guesses)
+        # print(player.guesses)
+        # print(computer.guesses)
         player.print_board(name)
         computer.print_board('computer')
+        print(f"{name}  {player_score} : {computer_score}  computer")
 
 
 main()
