@@ -194,7 +194,7 @@ def computer_guess(computer, player, board_size):
     """
     guess = (randint(0, board_size - 1), randint(0, board_size - 1))
     while guess in player.guesses:
-        guess = (randint(0, board_size -1), randint(0, board_size - 1))
+        guess = (randint(0, board_size - 1), randint(0, board_size - 1))
 
     row, col = guess
     result = player.guess(int(row), int(col))
@@ -260,6 +260,11 @@ def main():
         # print(player.guesses)
         # print(computer.guesses)
         print(f"{name}  {player_score} : {computer_score}  computer")
+        player_won = (player_score == number_of_ships)
+        computer_won = (computer_score == number_of_ships)
+        if player_won or computer_won:
+            display_winner(player_score, computer_score)
+            break
         quit_question = quit_game_input()
         if quit_question == 'quit':
             break
@@ -268,30 +273,3 @@ def main():
 
 
 main()
-
-# a = Board(5, 4, "matt", 'computer')
-# x = Board(5, 4, "greg", 'player')
-# x.generate_ships(4, 'player')
-# a.generate_ships(4, 'computer')
-# x.print_board()
-# a.print_board()
-
-
-# x.guess(1, 1)
-# x.guess(randint(0, 4), randint(0, 4))
-# x.guess(randint(0, 4), randint(0, 4))
-
-# a.guess(randint(0, 4), randint(0, 4))
-
-# a.print_board()
-# x.print_board()
-
-
-# # a = name()
-# # print(a)
-
-# # print(randint(0, 5))
-
-# y = x.ships
-
-# print(x.ships)
