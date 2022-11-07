@@ -201,6 +201,14 @@ def computer_guess(computer, player, board_size):
     return result
 
 
+def score_text(guess_player, guess_computer, player_result, computer_result):
+    hit = "Hit"
+    print(f"Player guessed: {guess_player}")
+    print(f"Player {'hit a ship!' if player_result == hit else 'missed'}.")
+    print(f"Computer guessed: {guess_computer}")
+    print(f"Computer {'hit a ship!' if computer_result == hit else 'missed'}.")
+
+
 def main():
     """
     Main function
@@ -220,6 +228,7 @@ def main():
     while player_score < number_of_ships and computer_score < number_of_ships:
         plyr_guess = final_guess_player(player, computer, board_size)
         cpu_guess = computer_guess(computer, player, board_size)
+        score_text(computer.guesses[-1], player.guesses[-1], plyr_guess, cpu_guess)
         if plyr_guess == "Hit":
             player_score += 1
         if cpu_guess == "Hit":
