@@ -202,6 +202,9 @@ def computer_guess(computer, player, board_size):
 
 
 def score_text(guess_player, guess_computer, player_result, computer_result):
+    """
+    Prints informative text about the player's and computer's latest guess.
+    """
     hit = "Hit"
     print(f"Player guessed: {guess_player}")
     print(f"Player {'hit a ship!' if player_result == hit else 'missed'}.")
