@@ -212,6 +212,15 @@ def score_text(guess_player, guess_computer, player_result, computer_result):
     print(f"Computer {'hit a ship!' if computer_result == hit else 'missed'}.")
 
 
+def quit_game():
+    """
+    Presents the player the opportunity to quit the game
+    """
+    inp = input("Press any key to continue. To quit press 'n'.")
+    if str(inp) == 'n':
+        return 'quit'
+
+
 def main():
     """
     Main function
@@ -238,9 +247,9 @@ def main():
             computer_score += 1
         # print(player.guesses)
         # print(computer.guesses)
+        print(f"{name}  {player_score} : {computer_score}  computer")
         player.print_board(name)
         computer.print_board('computer')
-        print(f"{name}  {player_score} : {computer_score}  computer")
 
 
 main()
