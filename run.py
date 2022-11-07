@@ -73,12 +73,11 @@ def welcome_message(board_size, number_of_ships):
 
     # the welcome text is inspire from Ultimate battleships project ci
     message = f'''
-    ---------------------------------------------
-           Welcome to the BATTLESHIPS GAME!
-       Board Size: {board_size}; Number of Battleships: {number_of_ships}
-    Top left corner coordinates - row: 1, col: 1
-    ---------------------------------------------
-
+--------------------------------------------
+       Welcome to the BATTLESHIPS GAME!
+   Board Size: {board_size}; Number of Battleships: {number_of_ships}
+Top left corner coordinates - row: 0, col: 0
+---------------------------------------------
     '''
     print(message)
     return message
