@@ -146,7 +146,7 @@ def guess_input():
     return player_guess
 
 
-def validate_guess(object, guess, board_size):
+def validate_guess(object, opponent, guess, board_size):
     """
     Check whether a player guess is valid.
     """
@@ -160,7 +160,8 @@ def validate_guess(object, guess, board_size):
         lower_err = v_row < low_limit or v_col < low_limit
         upper_err = v_row > upp_limit or v_col > upp_limit
 
-        if guess in object.guesses:
+        if (v_row, v_col) in opponent.guesses:
+            print("You already hit that location, choose another one.")
             return False
 
         if lower_err or upper_err:
@@ -178,10 +179,10 @@ def final_guess_player(player, computer, board_size):
     Sums up all the guessing process for the player
     """
     coordinates = guess_input()
-    a = validate_guess(player, coordinates, board_size)
+    a = validate_guess(player, computer, coordinates, board_size)
     while not a:
         coordinates = guess_input()
-        a = validate_guess(player, coordinates, board_size)
+        a = validate_guess(player, computer, coordinates, board_size)
     
     row, col = coordinates
     result = computer.guess(int(row), int(col))
@@ -211,10 +212,10 @@ def main():
     name = name_input()
     player = Board(board_size, number_of_ships, name, 'player')
     computer = Board(board_size, number_of_ships, "Computer", "computer")
-    player.print_board(name)
-    computer.print_board('computer')
     player.generate_ships(number_of_ships, 'player')
     computer.generate_ships(number_of_ships, 'computer')
+    player.print_board(name)
+    computer.print_board('computer')
     player_score = 0
     computer_score = 0
     while player_score < number_of_ships and computer_score < number_of_ships:
