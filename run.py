@@ -252,7 +252,7 @@ def main():
     player = Board(board_size, number_of_ships, name, 'player')
     computer = Board(board_size, number_of_ships, "Computer", "computer")
     player.generate_ships(number_of_ships, board_size, 'player')
-    computer.generate_ships(number_of_ships, board_size 'computer')
+    computer.generate_ships(number_of_ships, board_size, 'computer')
     player.print_board(name)
     computer.print_board('computer')
     player_score = 0
