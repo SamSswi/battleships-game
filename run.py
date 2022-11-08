@@ -192,9 +192,9 @@ def computer_guess(computer, player, board_size):
     """
     Sums up all the guessing process for computer
     """
-    guess = (randint(0, board_size - 1), randint(0, board_size - 1))
+    guess = (random_coordinate(board_size), random_coordinate(board_size))
     while guess in player.guesses:
-        guess = (randint(0, board_size - 1), randint(0, board_size - 1))
+        guess = (random_coordinate(board_size), random_coordinate(board_size))
 
     row, col = guess
     result = player.guess(int(row), int(col))
@@ -252,7 +252,7 @@ def main():
     player = Board(board_size, number_of_ships, name, 'player')
     computer = Board(board_size, number_of_ships, "Computer", "computer")
     player.generate_ships(number_of_ships, board_size, 'player')
-    computer.generate_ships(number_of_ships, board_size, 'computer')
+    computer.generate_ships(number_of_ships, board_size 'computer')
     player.print_board(name)
     computer.print_board('computer')
     player_score = 0
