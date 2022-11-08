@@ -260,7 +260,9 @@ def main():
     while player_score < number_of_ships and computer_score < number_of_ships:
         plyr_guess = final_guess_player(player, computer, board_size)
         cpu_guess = computer_guess(computer, player, board_size)
-        score_text(computer.guesses[-1], player.guesses[-1], plyr_guess, cpu_guess)
+        last_item_pl = player.guesses[-1]
+        last_item_cpu = computer.guesses[-1]
+        score_text(last_item_cpu, last_item_pl, plyr_guess, cpu_guess)
         if plyr_guess == "Hit":
             player_score += 1
         if cpu_guess == "Hit":
