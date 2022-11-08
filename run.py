@@ -248,12 +248,12 @@ def main():
     board_size = 3
     number_of_ships = 4
     welcome_message(board_size, number_of_ships)
-    name = name_input()
-    player = Board(board_size, number_of_ships, name, 'player')
+    p_name = name_input()
+    player = Board(board_size, number_of_ships, p_name, 'player')
     computer = Board(board_size, number_of_ships, "Computer", "computer")
     player.generate_ships(number_of_ships, board_size, 'player')
     computer.generate_ships(number_of_ships, board_size, 'computer')
-    player.print_board(name)
+    player.print_board(p_name)
     computer.print_board('computer')
     player_score = 0
     computer_score = 0
@@ -269,7 +269,7 @@ def main():
             computer_score += 1
         # print(player.guesses)
         # print(computer.guesses)
-        print(f"{name}  {player_score} : {computer_score}  computer")
+        print(f"{p_name}  {player_score} : {computer_score}  computer")
         player_won = (player_score == number_of_ships)
         computer_won = (computer_score == number_of_ships)
         if player_won or computer_won:
@@ -278,7 +278,7 @@ def main():
         quit_question = quit_game_input()
         if quit_question == 'quit':
             break
-        player.print_board(name)
+        player.print_board(p_name)
         computer.print_board('computer')
 
 
