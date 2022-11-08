@@ -50,17 +50,17 @@ class Board:  # the main class is from CI Battleship project
         self.guesses.append((x, y))
         return result
     
-    def generate_ships(self, num_ships, type):
+    def generate_ships(self, num_ships, size, type):
         """
         Generates ships for either player or computer board.
         """
 
         for _ in range(num_ships):
-            row = randint(0, 2)
-            col = randint(0, 2)
+            row = random_coordinate(size)
+            col = random_coordinate(size)
             while (row, col) in self.ships:
-                row = randint(0, 2)
-                col = randint(0, 2)
+                row = random_coordinate(size)
+                col = random_coordinate(size)
             self.adding_ships(row, col, type)
 
 
@@ -251,8 +251,8 @@ def main():
     name = name_input()
     player = Board(board_size, number_of_ships, name, 'player')
     computer = Board(board_size, number_of_ships, "Computer", "computer")
-    player.generate_ships(number_of_ships, 'player')
-    computer.generate_ships(number_of_ships, 'computer')
+    player.generate_ships(number_of_ships, board_size, 'player')
+    computer.generate_ships(number_of_ships, board_size, 'computer')
     player.print_board(name)
     computer.print_board('computer')
     player_score = 0
