@@ -188,7 +188,7 @@ def final_guess_player(player, computer, board_size):
     return result
 
 
-def computer_guess(computer, player, board_size):
+def computer_guess(player, board_size):
     """
     Sums up all the guessing process for computer
     """
