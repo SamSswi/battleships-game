@@ -233,6 +233,14 @@ def display_winner(player_score, computer_score):
         print("It's a draw")
 
 
+def random_coordinate(board_size):
+    """
+    Generates a random number that can serve as a valid coordinate 
+    """
+    num = randint(0, board_size - 1)
+    return num
+
+
 def main():
     """
     Main function
