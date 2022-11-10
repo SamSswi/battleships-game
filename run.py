@@ -173,7 +173,7 @@ def validate_guess(opponent, guess, board_size):
     return True
 
 
-def final_guess_player(player, computer, board_size):
+def final_guess_player(computer, board_size):
     """
     Sums up all the guessing process for the player
     """
@@ -245,8 +245,8 @@ def main():
     """
     Main function
     """
-    board_size = 3
-    number_of_ships = 4
+    board_size = 2
+    number_of_ships = 2
     welcome_message(board_size, number_of_ships)
     p_name = name_input()
     player = Board(board_size, number_of_ships, p_name, 'player')
@@ -258,7 +258,7 @@ def main():
     player_score = 0
     computer_score = 0
     while player_score < number_of_ships and computer_score < number_of_ships:
-        plyr_guess = final_guess_player(player, computer, board_size)
+        plyr_guess = final_guess_player(computer, board_size)
         cpu_guess = computer_guess(player, board_size)
         last_item_pl = player.guesses[-1]
         last_item_cpu = computer.guesses[-1]
