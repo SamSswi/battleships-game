@@ -26,10 +26,10 @@ class Board:  # the main class is from CI Battleship project
         for i in range(len(self.board)):    # idea to loop a print statement
             print(" ".join(self.board[i]))  # from CI battleship
 
-    def adding_ships(self, a, b, participant_type):
+    def adding_ships(self, a, b):
         """
-        Adds ships to the board for the player. 
-        Adds ship coordinates to the self.ships list for the computer. 
+        Adds ships to the board for the player.
+        Adds ship coordinates to the self.ships list for the computer.
         """
         if self.participant_type == 'computer':
             self.ships.append((a, b))
@@ -50,7 +50,7 @@ class Board:  # the main class is from CI Battleship project
         self.guesses.append((x, y))
         return result
 
-    def generate_ships(self, num_ships, size, participant_type):
+    def generate_ships(self, num_ships, size):
         """
         Generates ships for either player or computer board.
         """
@@ -61,7 +61,7 @@ class Board:  # the main class is from CI Battleship project
             while (row, col) in self.ships:
                 row = random_coordinate(size)
                 col = random_coordinate(size)
-            self.adding_ships(row, col, participant_type)
+            self.adding_ships(row, col)
 
 
 def welcome_message(board_size, number_of_ships):
@@ -251,8 +251,8 @@ def main():
     p_name = name_input()
     player = Board(board_size, number_of_ships, p_name, 'player')
     computer = Board(board_size, number_of_ships, "Computer", "computer")
-    player.generate_ships(number_of_ships, board_size, 'player')
-    computer.generate_ships(number_of_ships, board_size, 'computer')
+    player.generate_ships(number_of_ships, board_size)
+    computer.generate_ships(number_of_ships, board_size)
     player.print_board(p_name)
     computer.print_board('computer')
     player_score = 0
