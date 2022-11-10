@@ -8,12 +8,12 @@ class Board:  # the main class is from CI Battleship project
     Has methods for adding ships and guesses and printing the board.
     """
 
-    def __init__(self, size, num_ships, name, type):
+    def __init__(self, size, num_ships, name, participant_type):
         self.size = size
         self.board = [['.' for i in range(size)] for j in range(size)]
         self.num_ships = num_ships
         self.name = name
-        self.type = type
+        self.participant_type = participant_type
         self.guesses = []
         self.ships = []
 
@@ -26,14 +26,14 @@ class Board:  # the main class is from CI Battleship project
         for i in range(len(self.board)):    # idea to loop a print statement
             print(" ".join(self.board[i]))  # from CI battleship
 
-    def adding_ships(self, a, b, type):
+    def adding_ships(self, a, b, participant_type):
         """
         Adds ships to the board for the player. 
         Adds ship coordinates to the self.ships list for the computer. 
         """
-        if self.type == 'computer':
+        if self.participant_type == 'computer':
             self.ships.append((a, b))
-        elif self.type == 'player':
+        elif self.participant_type == 'player':
             self.board[a][b] = '@'
             self.ships.append((a, b))
 
@@ -50,7 +50,7 @@ class Board:  # the main class is from CI Battleship project
         self.guesses.append((x, y))
         return result
 
-    def generate_ships(self, num_ships, size, type):
+    def generate_ships(self, num_ships, size, participant_type):
         """
         Generates ships for either player or computer board.
         """
@@ -61,7 +61,7 @@ class Board:  # the main class is from CI Battleship project
             while (row, col) in self.ships:
                 row = random_coordinate(size)
                 col = random_coordinate(size)
-            self.adding_ships(row, col, type)
+            self.adding_ships(row, col, participant_type)
 
 
 def welcome_message(board_size, number_of_ships):
