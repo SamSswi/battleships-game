@@ -49,7 +49,7 @@ class Board:  # the main class is from CI Battleship project
             result = "Miss"
         self.guesses.append((x, y))
         return result
-    
+
     def generate_ships(self, num_ships, size, type):
         """
         Generates ships for either player or computer board.
@@ -91,10 +91,10 @@ def name_input():
     """
     while True:  # love-sandwiches CI  the idea to use a while True loop
         input_text = "Type in your battle name (max 30 characters):"
-        name = input(input_text + "\n")
+        player_name = input(input_text + "\n")
         print('-' * len(input_text))
-        if validate_name(name):
-            return name
+        if validate_name(player_name):
+            return player_name
 
 
 def validate_name(player_name):
