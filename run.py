@@ -97,18 +97,18 @@ def name_input():
             return name
 
 
-def validate_name(name):
+def validate_name(player_name):
     """
     Raises ValueError is the name is too long or an empty string
     """
 
-    name_length = len(name)
+    name_length = len(player_name)
     if name_length > 30:
         print(f"Your name has {name_length} characters and it exceeds"
               " the limit of 30 characters: \nTry entering a shorter "
               "battle name!")
         return False
-    elif name == '':
+    elif player_name == '':
         print("You submitted an empty string. Think of a cool battle"
               " name and try again!")
         return False
@@ -118,7 +118,7 @@ def validate_name(name):
 
 def name():
     """
-    Prompt the player to type in the name and return the name when 
+    Prompt the player to type in the name and return the name when
     it is valid.
     """
     player_name = name_input()
