@@ -145,7 +145,7 @@ def guess_input():
     return player_guess
 
 
-def validate_guess(object, opponent, guess, board_size):
+def validate_guess(opponent, guess, board_size):
     """
     Check whether a player guess is valid.
     """
@@ -178,10 +178,10 @@ def final_guess_player(player, computer, board_size):
     Sums up all the guessing process for the player
     """
     coordinates = guess_input()
-    validation = validate_guess(player, computer, coordinates, board_size)
+    validation = validate_guess(computer, coordinates, board_size)
     while not validation:
         coordinates = guess_input()
-        validation = validate_guess(player, computer, coordinates, board_size)
+        validation = validate_guess(computer, coordinates, board_size)
 
     row, col = coordinates
     result = computer.guess(int(row), int(col))
