@@ -3,26 +3,26 @@ from random import randint
 
 class Board:  # the main class is from CI Battleship project
     """
-    Main board class. Sets board size, the number of ships, 
+    Main board class. Sets board size, the number of ships,
     the player's name and the board type (player or computer board)
     Has methods for adding ships and guesses and printing the board.
     """
 
-    def __init__(self, size, num_ships, name, participant_type):
+    def __init__(self, size, num_ships, participant_name, participant_type):
         self.size = size
         self.board = [['.' for i in range(size)] for j in range(size)]
         self.num_ships = num_ships
-        self.name = name
+        self.participant_name = participant_name
         self.participant_type = participant_type
         self.guesses = []
         self.ships = []
 
-    def print_board(self, name):
+    def print_board(self, participant_name):
         """
         Displays the board, with the name on top.
         """
 
-        print(f"{name}'s board:")
+        print(f"{participant_name}'s board:")
         for i in range(len(self.board)):    # idea to loop a print statement
             print(" ".join(self.board[i]))  # from CI battleship
 
