@@ -178,11 +178,11 @@ def final_guess_player(player, computer, board_size):
     Sums up all the guessing process for the player
     """
     coordinates = guess_input()
-    a = validate_guess(player, computer, coordinates, board_size)
-    while not a:
+    validation = validate_guess(player, computer, coordinates, board_size)
+    while not validation:
         coordinates = guess_input()
-        a = validate_guess(player, computer, coordinates, board_size)
-    
+        validation = validate_guess(player, computer, coordinates, board_size)
+
     row, col = coordinates
     result = computer.guess(int(row), int(col))
     return result
@@ -235,7 +235,7 @@ def display_winner(player_score, computer_score):
 
 def random_coordinate(board_size):
     """
-    Generates a random number that can serve as a valid coordinate 
+    Generates a random number that can serve as a valid coordinate
     """
     num = randint(0, board_size - 1)
     return num
