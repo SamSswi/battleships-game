@@ -51,3 +51,6 @@ The ships are indicated by an "@" symbol. Guesses made on the board are marked w
 
 The Battleships Game is turn based. The winner is the participant who manages to sink all the ships of the opponent in the least amount of turns. 
 
+## Features
+
+### Existing Features
