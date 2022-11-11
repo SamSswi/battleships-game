@@ -95,5 +95,9 @@ I've tested the project by doing the following:
     - Tested in my local terminal and in the Code Institute Heroku terminal
 
  
+## Bugs 
+
+None
+
 
 
