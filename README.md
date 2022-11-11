@@ -75,5 +75,8 @@ The Battleships Game is turn based. The winner is the participant who manages to
 
 - The data is maintained in class objects
 
+### Future Features
+- The player can select the board size and the number of ships
+
 
 
