@@ -87,6 +87,13 @@ The Board class stores such data as: the board size, the number of ships, the po
 The Board class contains methods that help playing the game, such as: a method to print the board (print_board), a method to add ships on the board (add_ships), a method to add a guess and return a result (guess) and a method to randomly generate coordinates for adding the ships on the board (generate_ships).
 
 
+## Testing 
 
+I've tested the project by doing the following:
+    - Passed the code through the PEP8 linter and confirmed there are no problems
+    - Given invalid inputs: empty strings and a strings that are too long for the name input; strings, out of bounds numbers, same guess twice, for the coordinate inputs.
+    - Tested in my local terminal and in the Code Institute Heroku terminal
+
+ 
 
 
