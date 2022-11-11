@@ -37,3 +37,17 @@ The Battleships Game is a Python terminal game running in the Code Institute moc
 
 The users play against the computer in a game where they need to sink the computer's battleships before the computer sinks theirs. A battleship occupies one square on the board.
 
+[This is the live version of the project]()
+
+![Am I responsive image]()
+
+## How to play
+
+The Battleships Game is based on the classical war-themed [Battleship](https://www.thesprucecrafts.com/the-basic-rules-of-battleship-411069) board game, where the two players play against each other trying to guess the location of the opponent's ships. 
+
+The gameplay is straightforward. In this game, the player enters a battle name and two boards are printed with ships randomly generated on them. The player can see their ships on their board, however the computer's ships are concealed. 
+
+The ships are indicated by an "@" symbol. Guesses made on the board are marked with "*" in case of a Hit and with "X" in case of a Miss.
+
+The Battleships Game is turn based. The winner is the participant who manages to sink all the ships of the opponent in the least amount of turns. 
+
