@@ -29,3 +29,11 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 -----
 Happy coding!
+
+
+# Battleships Game
+
+The Battleships Game is a Python terminal game running in the Code Institute mock terminal on Heroku.
+
+The users play against the computer in a game where they need to sink the computer's battleships before the computer sinks theirs. A battleship occupies one square on the board.
+
