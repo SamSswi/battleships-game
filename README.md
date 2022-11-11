@@ -78,5 +78,13 @@ The Battleships Game is turn based. The winner is the participant who manages to
 ### Future Features
 - The player can select the board size and the number of ships
 
+## Data Model
+
+I used the Board class as my data model. The game creates two objects of the Board class to hold the boards of the player and the computer.
+
+The Board class stores such data as: the board size, the number of ships, the position of the ships on board, the guesses made agaist the board, the board type and the player's name.
+
+The Board class contains methods that help playing the game, such as: a method to print the board (print_board), a method to add ships on the board (add_ships), a method to add a guess and return a result (guess) and a method to randomly generate coordinates for adding the ships on the board (generate_ships).
+
 
 
