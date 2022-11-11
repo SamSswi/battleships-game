@@ -104,5 +104,15 @@ None
 - PEP8
     - No errors were returned from PEP
 
+## Deployment
+
+This project was deployed using Code Institute's mock terminal for Heroku
+- Deployment steps
+    - Fork or clone this repository
+    - Create a Heroku app
+    - Set the buildbacks to Python and NodeJS in that order
+    - Link the Heroku app to the repository
+    - Click on Deploy
+
 
 
