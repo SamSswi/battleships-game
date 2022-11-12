@@ -99,7 +99,7 @@ def name_input():
 
 def validate_name(player_name):
     """
-    Raises ValueError is the name is too long or an empty string
+    Returns False if the name is too long or an empty string
     """
 
     name_length = len(player_name)
