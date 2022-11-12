@@ -277,6 +277,7 @@ def main():
             break
         quit_question = quit_game_input()
         if quit_question == 'quit':
+            main()
             break
         player.print_board(p_name)
         computer.print_board('computer')
