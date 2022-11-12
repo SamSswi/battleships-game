@@ -299,6 +299,8 @@ def main():
             break
         player.print_board(p_name)
         computer.print_board('computer')
+    input("Press any key to start a new game: ")
+    main()
 
 
 main()
