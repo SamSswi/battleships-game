@@ -1,13 +1,20 @@
 from random import randint
 
 
-class Board:  # the main class is from CI Battleship project
+# the idea of creating the Board class and its structure is taken from
+# Code Institute Ultimate Battleships project.
+# Link to the deployed game: https://p3-battleships.herokuapp.com/
+# Source where the code was displayed:
+# https://www.youtube.com/watch?v=4sqtzZQpDJE
+class Board:
     """
     Main board class. Sets board size, the number of ships,
     the player's name and the board type (player or computer board)
     Has methods for adding ships and guesses and printing the board.
     """
 
+    # The init function is taken from Code Institute
+    # Ultimate Battleships project.
     def __init__(self, size, num_ships, participant_name, board_type):
         self.size = size
         self.board = [['.' for i in range(size)] for j in range(size)]
@@ -21,11 +28,14 @@ class Board:  # the main class is from CI Battleship project
         """
         Displays the board, with the name on top.
         """
-
         print(f"{participant_name}'s board:")
-        for i in range(len(self.board)):    # idea to loop a print statement
-            print(" ".join(self.board[i]))  # from CI battleship
+        # idea to loop a print statement is taken from Code Institute
+        # Ultimate Battleships project.
+        for i in range(len(self.board)):
+            print(" ".join(self.board[i]))
 
+    # The adding_ships function is taken from Code Institute
+    # Ultimate Battleships project.
     def adding_ships(self, a, b):
         """
         Adds ships to the board for the player.
@@ -37,6 +47,8 @@ class Board:  # the main class is from CI Battleship project
             self.board[a][b] = '@'
             self.ships.append((a, b))
 
+    # The guess function is taken from Code Institute
+    # Ultimate Battleships project.
     def guess(self, x, y):
         """
         Checks whether the guess is a hit or miss.
@@ -71,7 +83,8 @@ def welcome_message(board_size, number_of_ships):
     Displays the coordinates for the top left corner.
     """
 
-    # the welcome text is inspire from Ultimate battleships project ci
+    # the welcome message is inspired from Code Institute
+    # Ultimate battleships project.
     message = f'''
        Welcome to the BATTLESHIPS GAME!
    Board Size: {board_size}; Number of Battleships: {number_of_ships}
@@ -89,7 +102,11 @@ def name_input():
     Validates player name.
     Returns the name.
     """
-    while True:  # love-sandwiches CI  the idea to use a while True loop
+
+    # the idea to use a while True loop to get the right user input
+    # is inspired from Code Institute Love Sandwiches project
+    # (https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode)
+    while True:
         input_text = "Type in your battle name (max 30 characters):"
         player_name = input(input_text + "\n")
         print_46_dashes()
@@ -150,6 +167,9 @@ def validate_guess(opponent, guess, board_size):
     Check whether a player guess is valid.
     """
 
+    # the idea to use if condition inside the try section
+    # is inspired from Code Institute Love Sandwiches project
+    # (https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode)
     try:
         row, col = guess
         v_row = int(row)
@@ -254,7 +274,6 @@ def print_46_dashes():
     """
     dashes = "-" * 46
     print_dashes = print(dashes)
-
     return print_dashes
 
 
@@ -294,10 +313,14 @@ def main():
             break
         quit_question = quit_game_input()
         if quit_question == 'quit':
+            # The idea to restart the game after player decides to quit is
+            # taken from the Code Institute Ultimate Battleships project
             main()
             break
         player.print_board(p_name)
         computer.print_board('computer')
+    # The idea to give the player the option to start a new game is
+    # taken from the Code Institute Ultimate Battleships project
     input("Press any key to start a new game: ")
     main()
 
