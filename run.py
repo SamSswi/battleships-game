@@ -73,13 +73,13 @@ def welcome_message(board_size, number_of_ships):
 
     # the welcome text is inspire from Ultimate battleships project ci
     message = f'''
---------------------------------------------
        Welcome to the BATTLESHIPS GAME!
    Board Size: {board_size}; Number of Battleships: {number_of_ships}
 Top left corner coordinates - row: 0, col: 0
----------------------------------------------
     '''
+    print_46_dashes()
     print(message)
+    print_46_dashes()
     return message
 
 
@@ -92,7 +92,7 @@ def name_input():
     while True:  # love-sandwiches CI  the idea to use a while True loop
         input_text = "Type in your battle name (max 30 characters):"
         player_name = input(input_text + "\n")
-        print('-' * len(input_text))
+        print_46_dashes()
         if validate_name(player_name):
             return player_name
 
@@ -226,11 +226,17 @@ def display_winner(player_name, player_score, computer_score):
     Displays the final result of the game.
     """
     if player_score > computer_score:
+        print_46_dashes()
         print(f"Well done, Admiral {player_name}! The victory is yours!!!")
+        print_46_dashes()
     elif computer_score > player_score:
+        print_46_dashes()
         print("The enemy won! The battle is lost! Time to regroup.")
+        print_46_dashes()
     else:
+        print_46_dashes()
         print("That's a draw! Time to negotiate a ceasefire agreement.")
+        print_46_dashes()
 
 
 def random_coordinate(board_size):
@@ -245,9 +251,10 @@ def print_46_dashes():
     """
     Prints 46 dashes
     """
-    dashes = 46 * "-"
+    dashes = "-" * 46
+    print_dashes = print(dashes)
 
-    return dashes
+    return print_dashes
 
 
 def main():
@@ -278,7 +285,9 @@ def main():
             computer_score += 1
         # print(player.guesses)
         # print(computer.guesses)
+        print_46_dashes()
         print(f"{p_name}  {player_score} : {computer_score}  computer")
+        print_46_dashes()
         player_won = (player_score == number_of_ships)
         computer_won = (computer_score == number_of_ships)
         if player_won or computer_won:
