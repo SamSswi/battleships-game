@@ -241,6 +241,15 @@ def random_coordinate(board_size):
     return num
 
 
+def print_46_dashes():
+    """
+    Prints 46 dashes
+    """
+    dashes = 46 * "-"
+
+    return dashes
+
+
 def main():
     """
     Main function
