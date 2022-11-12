@@ -114,5 +114,11 @@ This project was deployed using Code Institute's mock terminal for Heroku
     - Link the Heroku app to the repository
     - Click on Deploy
 
+## Credits
 
-
+- Code Institute for the deployment terminal
+- Creating the **Board class** and its structure is taken from Code Institute [Ultimate Battleships](https://p3-battleships.herokuapp.com/) project. [The source where the code was displayed](https://www.youtube.com/watch?v=4sqtzZQpDJE)
+- The **init** function is taken from Code Institute [Ultimate Battleships](https://p3-battleships.herokuapp.com/) project.
+- The **adding_ships** function is taken from Code Institute [Ultimate Battleships](https://p3-battleships.herokuapp.com/) project.
+- The guess function is taken from Code Institute [Ultimate Battleships](https://p3-battleships.herokuapp.com/) project. 
+- Ideas to validate the user input: Code Institute [Love Sandwiches]((https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode)) project.
