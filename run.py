@@ -8,12 +8,12 @@ class Board:  # the main class is from CI Battleship project
     Has methods for adding ships and guesses and printing the board.
     """
 
-    def __init__(self, size, num_ships, participant_name, participant_type):
+    def __init__(self, size, num_ships, participant_name, board_type):
         self.size = size
         self.board = [['.' for i in range(size)] for j in range(size)]
         self.num_ships = num_ships
         self.participant_name = participant_name
-        self.participant_type = participant_type
+        self.board_type = board_type
         self.guesses = []
         self.ships = []
 
@@ -31,9 +31,9 @@ class Board:  # the main class is from CI Battleship project
         Adds ships to the board for the player.
         Adds ship coordinates to the self.ships list for the computer.
         """
-        if self.participant_type == 'computer':
+        if self.board_type == 'computer':
             self.ships.append((a, b))
-        elif self.participant_type == 'player':
+        elif self.board_type == 'player':
             self.board[a][b] = '@'
             self.ships.append((a, b))
 
