@@ -173,7 +173,7 @@ def validate_guess(opponent, guess, board_size):
     return True
 
 
-def final_guess_player(computer, board_size):
+def valid_guess_player(computer, board_size):
     """
     Sums up all the guessing process for the player
     """
@@ -201,7 +201,7 @@ def computer_guess(player, board_size):
     return result
 
 
-def score_text(guess_player, guess_computer, player_result, computer_result):
+def round_result(guess_player, guess_computer, player_result, computer_result):
     """
     Prints informative text about the player's and computer's latest guess.
     """
@@ -221,7 +221,7 @@ def quit_game_input():
         return 'quit'
 
 
-def display_winner(player_name, player_score, computer_score):
+def final_result(player_name, player_score, computer_score):
     """
     Displays the final result of the game.
     """
@@ -275,24 +275,22 @@ def main():
     player_score = 0
     computer_score = 0
     while player_score < number_of_ships and computer_score < number_of_ships:
-        plyr_guess = final_guess_player(computer, board_size)
+        plyr_guess = valid_guess_player(computer, board_size)
         cpu_guess = computer_guess(player, board_size)
         last_item_pl = player.guesses[-1]
         last_item_cpu = computer.guesses[-1]
-        score_text(last_item_cpu, last_item_pl, plyr_guess, cpu_guess)
+        round_result(last_item_cpu, last_item_pl, plyr_guess, cpu_guess)
         if plyr_guess == "Hit":
             player_score += 1
         if cpu_guess == "Hit":
             computer_score += 1
-        # print(player.guesses)
-        # print(computer.guesses)
         print_46_dashes()
         print(f"{p_name}  {player_score} : {computer_score}  computer")
         print_46_dashes()
         player_won = (player_score == number_of_ships)
         computer_won = (computer_score == number_of_ships)
         if player_won or computer_won:
-            display_winner(p_name, player_score, computer_score)
+            final_result(p_name, player_score, computer_score)
             break
         quit_question = quit_game_input()
         if quit_question == 'quit':
