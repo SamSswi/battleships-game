@@ -221,16 +221,16 @@ def quit_game_input():
         return 'quit'
 
 
-def display_winner(player_score, computer_score):
+def display_winner(player_name, player_score, computer_score):
     """
     Displays the final result of the game.
     """
     if player_score > computer_score:
-        print("Player won")
+        print(f"Well done, Admiral {player_name}! The victory is yours!!!")
     elif computer_score > player_score:
-        print("Computer won")
+        print("The enemy won! The battle is lost! Time to regroup.")
     else:
-        print("It's a draw")
+        print("That's a draw! Time to negotiate a ceasefire agreement.")
 
 
 def random_coordinate(board_size):
@@ -273,7 +273,7 @@ def main():
         player_won = (player_score == number_of_ships)
         computer_won = (computer_score == number_of_ships)
         if player_won or computer_won:
-            display_winner(player_score, computer_score)
+            display_winner(p_name, player_score, computer_score)
             break
         quit_question = quit_game_input()
         if quit_question == 'quit':
