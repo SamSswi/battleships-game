@@ -154,8 +154,8 @@ def guess_input():
     Collects the imputed data.
     """
     print("Time to attack! The enemy is hiding his ships!")
-    row = input("Select a row where to strike: ")
-    col = input("Let's add precision to that. Select a column: ")
+    row = input("Select a row where to strike: \n")
+    col = input("Let's add precision to that. Select a column: \n")
 
     player_guess = (row, col)
 
@@ -236,7 +236,7 @@ def quit_game_input():
     """
     Presents the player the opportunity to quit the game
     """
-    inp = input("Press any key to continue. To quit press 'n'.")
+    inp = input("Press any key to continue. To quit press 'n'.\n")
     if str(inp) == 'n':
         return 'quit'
 
@@ -321,7 +321,7 @@ def main():
         computer.print_board('computer')
     # The idea to give the player the option to start a new game is
     # taken from the Code Institute Ultimate Battleships project
-    input("Press any key to start a new game: ")
+    input("Press any key to start a new game:\n")
     main()
 
 
