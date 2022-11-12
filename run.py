@@ -225,6 +225,7 @@ def display_winner(player_name, player_score, computer_score):
     """
     Displays the final result of the game.
     """
+    print("THE GAME IS OVER!")
     if player_score > computer_score:
         print_46_dashes()
         print(f"Well done, Admiral {player_name}! The victory is yours!!!")
