@@ -25,20 +25,20 @@ The Battleships Game is turn based. The winner is the participant who manages to
     - The ships of both participants are placed randomly on board
     - The ships of the computer are concealed from the player
 
-![Start game boards]()
+![Start game boards](/assets/images/startScreen.jpg)
 
 - Play against the computer
 - The application accepts user input
 - The application maintains the score
 
-![Guesses and score update]()
+![Guesses and score update](/assets/images/guessScoreBattleships.jpg)
 
 - Input validation and error checking
     - The coordinates entered must be within the grid size
     - The coordinates must be numbers
     - The same guess can't be made twice
 
-![Input validation]()
+![Input validation](/assets/images/inputValidation.jpg)
 
 - The data is maintained in class objects
 
