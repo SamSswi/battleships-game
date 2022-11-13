@@ -94,4 +94,4 @@ This project was deployed using Code Institute's mock terminal for Heroku
 - The **init** function is taken from Code Institute [Ultimate Battleships](https://p3-battleships.herokuapp.com/) project.
 - The **adding_ships** function is taken from Code Institute [Ultimate Battleships](https://p3-battleships.herokuapp.com/) project.
 - The guess function is taken from Code Institute [Ultimate Battleships](https://p3-battleships.herokuapp.com/) project. 
-- Ideas to validate the user input: Code Institute [Love Sandwiches]((https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode)) project.
+- Ideas to validate the user input: Code Institute [Love Sandwiches](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode) project.
