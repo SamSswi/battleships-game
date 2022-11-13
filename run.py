@@ -284,8 +284,8 @@ def main():
     of playing the game between the player and the computer.
     Updates the scores and displays the final result.
     """
-    board_size = 2
-    number_of_ships = 2
+    board_size = 5
+    number_of_ships = 4
     welcome_message(board_size, number_of_ships)
     p_name = name_input()
     player = Board(board_size, number_of_ships, p_name, 'player')
