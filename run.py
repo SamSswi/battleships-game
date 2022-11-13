@@ -279,7 +279,10 @@ def print_46_dashes():
 
 def main():
     """
-    Main function
+    Main function. Starts a new game. Sets the board size.
+    Resets the scores. Initializes the boards. Runs the process
+    of playing the game between the player and the computer.
+    Updates the scores and displays the final result.
     """
     board_size = 2
     number_of_ships = 2
