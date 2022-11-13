@@ -89,7 +89,7 @@ The Board class contains methods that help playing the game, such as: a method t
 
 ## Testing 
 
-I've tested the project by doing the following:
+- I've tested the project by doing the following:
     - Passed the code through the PEP8 linter and confirmed there are no problems
     - Given invalid inputs: empty strings and a strings that are too long for the name input; strings, out of bounds numbers, same guess twice, for the coordinate inputs.
     - Tested in my local terminal and in the Code Institute Heroku terminal
