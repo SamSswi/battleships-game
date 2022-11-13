@@ -70,7 +70,7 @@ None
 
 - PEP8
     - **No errors were returned**
-    - As a workaround for the [pep8online.com](pep8online.com) validator, I added a PEP8 validator in the Gitpod Workspace.
+    - As a workaround for the [pep8online.com](http://pep8online.com/) validator, I added a PEP8 validator in the Gitpod Workspace.
     - The "pycodestyle" extension was already installed.
     - I pressed "Ctrl + P" in the workspace and typed ">linter" in the search bar.
     - Selected "Python: Select Linter" then selected "pycodestyle".
